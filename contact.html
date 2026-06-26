@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | ToolHub</title>
+    <style>
+        /* Core styles */
+        :root { --primary: #2563eb; --bg: #f8fafc; --surface: #ffffff; --text-main: #0f172a; --text-muted: #64748b; --border: #e2e8f0; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', system-ui, sans-serif; }
+        body { background-color: var(--bg); color: var(--text-main); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
+        header { background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+        nav { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); text-decoration: none; letter-spacing: -0.5px; }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { text-decoration: none; color: var(--text-muted); font-weight: 500; }
+        .nav-links a:hover { color: var(--primary); }
+        
+        main { flex: 1; max-width: 600px; margin: 3rem auto; padding: 2rem; text-align: center; background: var(--surface); border-radius: 12px; border: 1px solid var(--border); }
+        h1 { margin-bottom: 1rem; }
+        p { color: var(--text-muted); margin-bottom: 2rem; }
+        
+        .contact-btn { display: inline-block; background: var(--primary); color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: 0.2s; }
+        .contact-btn:hover { background: #1d4ed8; }
+        
+        footer { background: var(--surface); border-top: 1px solid var(--border); padding: 3rem 2rem; text-align: center; margin-top: auto; }
+        .footer-links a { color: var(--text-muted); text-decoration: none; margin: 0 1rem; font-size: 0.95rem; }
+        .copyright { color: var(--text-muted); font-size: 0.85rem; margin-top: 1rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="/" class="logo">ToolHub</a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Get in Touch</h1>
+        <p>Have a question, found a bug, or want to suggest a new tool? We'd love to hear from you. Send us an email and we'll get back to you as soon as possible.</p>
+        
+        <!-- Replace this with your actual email address -->
+        <a href="mailto:hello@yourdomain.com" class="contact-btn">Email Support</a>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="/privacy-policy.html">Privacy Policy</a>
+            <a href="/terms.html">Terms of Service</a>
+            <a href="/contact.html">Contact Us</a>
+        </div>
+        <div class="copyright">&copy; 2026 ToolHub. All rights reserved.</div>
+    </footer>
+
+</body>
+</html>

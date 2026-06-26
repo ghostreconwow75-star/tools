@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Timestamp Generator | Free Local Time Format Tool</title>
+    <meta name="description" content="Free tool to generate Discord Unix timestamps. Convert your local date and time into Discord formatting codes so everyone sees events in their own timezone.">
+    
+    <!-- Google AdSense Auto Ads Code Here -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXX" crossorigin="anonymous"></script> -->
+
+    <style>
+        :root {
+            --bg-color: #313338;
+            --container-bg: #2b2d31;
+            --text-main: #f2f3f5;
+            --text-muted: #b5bac1;
+            --blurple: #5865F2;
+            --blurple-hover: #4752C4;
+            --border: #1e1f22;
+            --success: #23a559;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'gg sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; padding: 0 1rem; }
+        
+        .max-w { max-width: 800px; margin: 0 auto; }
+        header { text-align: center; padding: 3rem 0 2rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+        h1 { color: var(--text-main); margin-bottom: 0.5rem; font-size: 2rem; }
+        header p { color: var(--text-muted); }
+
+        /* AdSense Placeholders */
+        .ad-slot { background: var(--container-bg); border: 2px dashed #4e5058; color: var(--text-muted); text-align: center; padding: 2rem; margin: 2rem 0; border-radius: 8px; font-size: 0.9rem; }
+
+        /* Tool UI */
+        .tool-container { background: var(--container-bg); padding: 2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        .input-group { display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
+        .input-box { flex: 1; min-width: 200px; }
+        label { display: block; margin-bottom: 0.5rem; color: var(--text-muted); font-weight: bold; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        input[type="date"], input[type="time"] { width: 100%; padding: 0.75rem; border-radius: 4px; border: none; background: #1e1f22; color: var(--text-main); font-size: 1rem; }
+        input[type="date"]::-webkit-calendar-picker-indicator, input[type="time"]::-webkit-calendar-picker-indicator { filter: invert(1); cursor: pointer; }
+
+        .result-list { display: flex; flex-direction: column; gap: 1rem; }
+        .result-item { display: flex; align-items: center; justify-content: space-between; background: #1e1f22; padding: 1rem; border-radius: 8px; flex-wrap: wrap; gap: 1rem; }
+        .format-preview { flex: 1; }
+        .format-name { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.2rem; }
+        .format-visual { font-size: 1.1rem; font-weight: 500; }
+        .copy-btn { background: var(--blurple); color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 4px; cursor: pointer; font-weight: 600; transition: background 0.2s; white-space: nowrap; }
+        .copy-btn:hover { background: var(--blurple-hover); }
+        .copy-btn.copied { background: var(--success); }
+
+        /* SEO Text Content */
+        .content-section { background: var(--container-bg); padding: 2.5rem; border-radius: 12px; margin-top: 2rem; }
+        .content-section h2 { margin-top: 1.5rem; margin-bottom: 1rem; color: #fff; font-size: 1.5rem; }
+        .content-section h2:first-child { margin-top: 0; }
+        .content-section h3 { margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1.2rem; }
+        .content-section p { margin-bottom: 1rem; color: #dbdee1; }
+        .content-section ul { margin-left: 1.5rem; margin-bottom: 1rem; color: #dbdee1; }
+        .content-section li { margin-bottom: 0.5rem; }
+
+        footer { text-align: center; padding: 2rem; margin-top: 2rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.9rem; }
+        footer a { color: var(--blurple); text-decoration: none; margin: 0 0.5rem; }
+        footer a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+<div class="max-w">
+    <header>
+        <h1>Discord Timestamp Generator</h1>
+        <p>Pick a date and time. Get the Discord markdown code. Everyone sees it in their local timezone.</p>
+    </header>
+
+    <!-- TOP AD PLACEMENT -->
+    <div class="ad-slot">[ AdSense Top Leaderboard / Responsive ]</div>
+
+    <!-- THE TOOL -->
+    <div class="tool-container">
+        <div class="input-group">
+            <div class="input-box">
+                <label for="datePicker">Select Date</label>
+                <input type="date" id="datePicker">
+            </div>
+            <div class="input-box">
+                <label for="timePicker">Select Time</label>
+                <input type="time" id="timePicker">
+            </div>
+        </div>
+
+        <div class="result-list" id="results">
+            <!-- Results injected via JS -->
+        </div>
+    </div>
+
+    <!-- MIDDLE AD PLACEMENT -->
+    <div class="ad-slot">[ AdSense In-Article Ad ]</div>
+
+    <!-- SEO & ADSENSE TEXT WALL -->
+    <div class="content-section">
+        <h2>What is a Discord Timestamp?</h2>
+        <p>If you run a Discord server, schedule gaming sessions, or manage an international community, time zones are a massive headache. If you announce an event at "5:00 PM EST," your members in London, Tokyo, and Sydney have to manually calculate what time that means for them.</p>
+        <p>A <strong>Discord Timestamp</strong> solves this problem completely. It is a special piece of markdown code using Unix Epoch time (for example, <code>&lt;t:1672531200:F&gt;</code>) that you can paste into any Discord chat or announcement channel. When you send the message, Discord automatically translates that code into the local timezone of whoever is reading it.</p>
+
+        <h2>How to Use This Generator Tool</h2>
+        <p>Our free Timestamp Generator makes it incredibly easy to format your dates without needing to calculate Unix time manually:</p>
+        <ul>
+            <li><strong>Step 1:</strong> Select the Date of your event from the calendar input above.</li>
+            <li><strong>Step 2:</strong> Select the exact Time your event starts. The tool uses your current local timezone to do the math.</li>
+            <li><strong>Step 3:</strong> Review the generated formats. You can choose from Short Time, Long Date, Relative Time (e.g., "in 5 hours"), and more.</li>
+            <li><strong>Step 4:</strong> Click the "Copy Code" button next to your preferred style and paste it directly into Discord!</li>
+        </ul>
+
+        <h3>Available Timestamp Formats</h3>
+        <p>Discord supports multiple visual styles for displaying time depending on the letter attached to the end of the code. Here is a breakdown of what the different format tags mean:</p>
+        <ul>
+            <li><strong>Default (t):</strong> Shows the short time (e.g., 4:20 PM)</li>
+            <li><strong>Long Time (T):</strong> Includes seconds (e.g., 4:20:30 PM)</li>
+            <li><strong>Short Date (d):</strong> Numbers only (e.g., 12/31/2026)</li>
+            <li><strong>Long Date (D):</strong> Spelled out month (e.g., December 31, 2026)</li>
+            <li><strong>Short Date/Time (f):</strong> Full text format (e.g., December 31, 2026 4:20 PM)</li>
+            <li><strong>Long Date/Time (F):</strong> Includes the day of the week (e.g., Thursday, December 31, 2026 4:20 PM)</li>
+            <li><strong>Relative (R):</strong> A dynamic countdown or count up (e.g., "in 3 days" or "2 hours ago")</li>
+        </ul>
+
+        <h2>Privacy & Data Security</h2>
+        <p>We value your privacy. This Discord timestamp calculator is a 100% browser-based tool. When you select a date and time, the conversion to Unix Epoch time happens locally on your device via JavaScript. No data is ever sent to, or stored on, our web servers.</p>
+    </div>
+
+    <!-- BOTTOM AD PLACEMENT -->
+    <div class="ad-slot">[ AdSense Bottom Responsive Ad ]</div>
+</div>
+
+<footer>
+    <p>&copy; 2026 Discord Time Tools. Not affiliated with Discord Inc.</p>
+    <p style="margin-top: 0.5rem;">
+        <a href="/privacy-policy.html">Privacy Policy</a> | 
+        <a href="/terms.html">Terms of Service</a> | 
+        <a href="/contact.html">Contact</a>
+    </p>
+</footer>
+
+<script>
+    const datePicker = document.getElementById('datePicker');
+    const timePicker = document.getElementById('timePicker');
+    const resultsContainer = document.getElementById('results');
+
+    // Initialize with current local time
+    const now = new Date();
+    datePicker.value = now.toISOString().split('T')[0];
+    timePicker.value = now.toTimeString().slice(0,5);
+
+    const formats = [
+        { id: 'f', name: 'Short Date/Time', getPreview: (d) => d.toLocaleString(undefined, { dateStyle: 'long', timeStyle: 'short' }) },
+        { id: 'F', name: 'Long Date/Time', getPreview: (d) => d.toLocaleString(undefined, { dateStyle: 'full', timeStyle: 'short' }) },
+        { id: 't', name: 'Short Time', getPreview: (d) => d.toLocaleTimeString(undefined, { timeStyle: 'short' }) },
+        { id: 'T', name: 'Long Time', getPreview: (d) => d.toLocaleTimeString(undefined, { timeStyle: 'medium' }) },
+        { id: 'd', name: 'Short Date', getPreview: (d) => d.toLocaleDateString(undefined, { dateStyle: 'short' }) },
+        { id: 'D', name: 'Long Date', getPreview: (d) => d.toLocaleDateString(undefined, { dateStyle: 'long' }) },
+        { id: 'R', name: 'Relative Time', getPreview: (d) => "in [x] hours / [x] days ago" } // Static preview for relative
+    ];
+
+    function updateTimestamps() {
+        const dateVal = datePicker.value;
+        const timeVal = timePicker.value;
+        if (!dateVal || !timeVal) return;
+
+        // Create Date object from local input
+        const selectedDate = new Date(`${dateVal}T${timeVal}`);
+        const unixTimestamp = Math.floor(selectedDate.getTime() / 1000);
+
+        resultsContainer.innerHTML = '';
+
+        formats.forEach(format => {
+            const code = `<t:${unixTimestamp}:${format.id}>`;
+            const preview = format.getPreview(selectedDate);
+            
+            const html = `
+                <div class="result-item">
+                    <div class="format-preview">
+                        <div class="format-name">${format.name}</div>
+                        <div class="format-visual">${preview}</div>
+                    </div>
+                    <button class="copy-btn" onclick="copyCode(this, '${code}')">Copy: ${code}</button>
+                </div>
+            `;
+            resultsContainer.insertAdjacentHTML('beforeend', html);
+        });
+    }
+
+    window.copyCode = function(btn, text) {
+        navigator.clipboard.writeText(text).then(() => {
+            const originalText = btn.innerText;
+            btn.innerText = 'Copied!';
+            btn.classList.add('copied');
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.classList.remove('copied');
+            }, 2000);
+        });
+    }
+
+    datePicker.addEventListener('input', updateTimestamps);
+    timePicker.addEventListener('input', updateTimestamps);
+
+    // Initial render
+    updateTimestamps();
+</script>
+</body>
+</html>

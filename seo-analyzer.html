@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Text & Readability Analyzer | Free Online Tool</title>
+    <meta name="description" content="Free online word counter, readability analyzer, and SEO tool for writers and marketers.">
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --surface: #ffffff;
+            --bg: #f8fafc;
+            --text: #0f172a;
+            --text-light: #475569;
+            --border: #e2e8f0;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', system-ui, sans-serif; }
+        body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
+        header { background: var(--surface); padding: 2rem 1rem; text-align: center; border-bottom: 1px solid var(--border); }
+        h1 { color: var(--primary); margin-bottom: 0.5rem; }
+        .container { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+        
+        /* Tool Interface */
+        .tool-wrapper { background: var(--surface); padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); margin-bottom: 2rem; }
+        textarea { width: 100%; height: 200px; padding: 1rem; border: 2px solid var(--border); border-radius: 8px; resize: vertical; font-size: 1rem; margin-bottom: 1.5rem; transition: border-color 0.2s; }
+        textarea:focus { outline: none; border-color: var(--primary); }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; }
+        .stat-box { background: var(--bg); padding: 1.5rem; border-radius: 8px; text-align: center; border: 1px solid var(--border); }
+        .stat-value { font-size: 2rem; font-weight: 700; color: var(--primary); line-height: 1; margin-bottom: 0.5rem; }
+        .stat-label { font-size: 0.875rem; color: var(--text-light); font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
+        
+        /* AdSense Placeholders - Remove background/border when replacing with real ad code */
+        .ad-placeholder { background: #f1f5f9; border: 2px dashed #cbd5e1; color: #64748b; text-align: center; padding: 2rem; margin: 2rem 0; border-radius: 8px; font-size: 0.875rem; }
+        
+        /* Text Content (Crucial for AdSense) */
+        .content-section { background: var(--surface); padding: 2.5rem; border-radius: 12px; margin-bottom: 2rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+        .content-section h2 { margin-bottom: 1rem; font-size: 1.5rem; }
+        .content-section h3 { margin: 1.5rem 0 0.5rem; font-size: 1.25rem; }
+        .content-section p { margin-bottom: 1rem; color: var(--text-light); }
+        .content-section ul { margin-left: 1.5rem; margin-bottom: 1rem; color: var(--text-light); }
+        .content-section li { margin-bottom: 0.5rem; }
+        
+        footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border); margin-top: 2rem; color: var(--text-light); background: var(--surface); }
+        footer a { color: var(--primary); text-decoration: none; margin: 0 0.5rem; font-weight: 500; }
+        footer a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>SEO Text & Readability Analyzer</h1>
+    <p>Instantly optimize your content for readers and search engines.</p>
+</header>
+
+<div class="container">
+    
+    <div class="ad-placeholder">
+        [AdSense Top Leaderboard (728x90) or Responsive Ad Unit Here]
+    </div>
+
+    <div class="tool-wrapper">
+        <textarea id="textInput" placeholder="Paste your article, essay, or blog post here to begin analysis..."></textarea>
+        <div class="stats-grid">
+            <div class="stat-box">
+                <div class="stat-value" id="wordCount">0</div>
+                <div class="stat-label">Words</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value" id="charCount">0</div>
+                <div class="stat-label">Characters</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value" id="readTime">0m</div>
+                <div class="stat-label">Read Time</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value" id="sentenceCount">0</div>
+                <div class="stat-label">Sentences</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ad-placeholder">
+        [AdSense In-Article Responsive Ad Unit Here]
+    </div>
+
+    <div class="content-section">
+        <h2>Why Use a Text Analyzer?</h2>
+        <p>Creating high-quality, engaging content is crucial for both user retention and search engine optimization (SEO). Whether you are crafting a blog post, an academic essay, or a social media update, knowing your text metrics ensures you hit your target guidelines. Our free SEO Text & Readability Analyzer helps writers optimize their text instantly without the need for expensive software.</p>
+        
+        <h3>How to Use This Tool</h3>
+        <p>Using the analyzer is incredibly simple. Just copy your text from your word processor and paste it directly into the input box above. The tool utilizes advanced browser-side scripts to instantly calculate your metrics in real-time as you type or paste.</p>
+        <p>Because the processing happens locally on your device, <strong>your text is never uploaded to any server</strong>, ensuring your unpublished drafts and private documents remain 100% secure and confidential.</p>
+
+        <h3>Understanding Your Metrics</h3>
+        <ul>
+            <li><strong>Word Count:</strong> Essential for hitting SEO length targets, freelance writing assignments, or academic essay requirements. Search engines often favor comprehensive content.</li>
+            <li><strong>Reading Time:</strong> We calculate this based on the average adult reading speed of 238 words per minute. Including a reading time on your blogs can reduce bounce rates by setting clear expectations for your visitors.</li>
+            <li><strong>Character Count:</strong> Vital for crafting the perfect SEO meta descriptions (typically under 160 characters) and ensuring your social media posts fit within platform limits.</li>
+            <li><strong>Sentence Count:</strong> Helps you gauge the pacing of your text. Too few sentences in a high word-count text usually indicates overly long, complex sentences that hurt readability.</li>
+        </ul>
+        
+        <h3>Is this tool completely free?</h3>
+        <p>Yes! We monetize this website through unobtrusive display ads provided by Google AdSense. This allows us to pay for our hosting and development time while keeping the tool 100% free for you to use forever, with no daily limits or premium paywalls.</p>
+    </div>
+
+    <div class="ad-placeholder">
+        [AdSense Bottom Responsive Ad Unit Here]
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 SEO Text Tools. All rights reserved.</p>
+    <p style="margin-top: 1rem;">
+        <a href="/privacy-policy.html">Privacy Policy</a> | 
+        <a href="/terms.html">Terms of Service</a> | 
+        <a href="/contact.html">Contact Us</a>
+    </p>
+</footer>
+
+<script>
+    const input = document.getElementById('textInput');
+    const wordCount = document.getElementById('wordCount');
+    const charCount = document.getElementById('charCount');
+    const readTime = document.getElementById('readTime');
+    const sentenceCount = document.getElementById('sentenceCount');
+
+    input.addEventListener('input', () => {
+        const text = input.value;
+        
+        // Calculate Characters
+        charCount.textContent = text.length;
+        
+        // Calculate Words
+        const words = text.trim().split(/\s+/).filter(word => word.length > 0);
+        const wCount = words.length;
+        wordCount.textContent = wCount;
+        
+        // Calculate Reading Time (avg 238 words per minute)
+        const time = Math.ceil(wCount / 238);
+        readTime.textContent = time === 0 && wCount > 0 ? '< 1m' : `${time}m`;
+        
+        // Calculate Sentences
+        const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0);
+        sentenceCount.textContent = text.length === 0 ? 0 : sentences.length;
+    });
+</script>
+</body>
+</html>

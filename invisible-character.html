@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invisible Character & Blank Space Copy Paste</title>
+    <meta name="description" content="Copy and paste invisible characters, blank spaces, and empty text for Instagram, WhatsApp, Discord, and Gaming profiles.">
+    
+    <style>
+        :root { --primary: #2563eb; --primary-hover: #1d4ed8; --bg: #f8fafc; --surface: #ffffff; --text: #0f172a; --text-muted: #64748b; --border: #e2e8f0; --success: #16a34a; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', system-ui, sans-serif; }
+        body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
+        
+        header { background: var(--surface); border-bottom: 1px solid var(--border); }
+        nav { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); text-decoration: none; letter-spacing: -0.5px; }
+        .nav-links a { text-decoration: none; color: var(--text-muted); font-weight: 500; margin-left: 1.5rem; }
+        
+        .container { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+        .hero { text-align: center; margin-bottom: 2rem; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .hero p { color: var(--text-muted); }
+
+        /* Ad Placeholder */
+        .ad-slot { background: #f1f5f9; border: 2px dashed #cbd5e1; color: #64748b; text-align: center; padding: 2rem; margin: 2rem 0; border-radius: 8px; font-size: 0.875rem; }
+
+        /* Tool UI */
+        .tool-box { background: var(--surface); padding: 2.5rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); text-align: center; margin-bottom: 2rem; }
+        .btn-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+        
+        .copy-card { border: 2px solid var(--border); padding: 1.5rem; border-radius: 8px; transition: 0.2s; }
+        .copy-card:hover { border-color: var(--primary); }
+        .copy-card h3 { margin-bottom: 0.5rem; font-size: 1.1rem; }
+        .copy-card p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem; }
+        
+        .copy-btn { background: var(--primary); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-weight: 600; cursor: pointer; width: 100%; transition: 0.2s; }
+        .copy-btn:hover { background: var(--primary-hover); }
+        .copy-btn.copied { background: var(--success); }
+
+        .test-area { text-align: left; margin-top: 2rem; }
+        .test-area label { font-weight: 600; font-size: 0.9rem; color: var(--text-muted); display: block; margin-bottom: 0.5rem; }
+        .test-area textarea { width: 100%; height: 80px; padding: 1rem; border: 2px solid var(--border); border-radius: 8px; font-size: 1rem; resize: none; }
+
+        /* Text Wall */
+        .content { background: var(--surface); padding: 2.5rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); margin-bottom: 2rem; }
+        .content h2 { margin: 1.5rem 0 1rem; font-size: 1.5rem; }
+        .content h2:first-child { margin-top: 0; }
+        .content p { margin-bottom: 1rem; color: var(--text-muted); }
+        .content ul { margin-left: 1.5rem; margin-bottom: 1rem; color: var(--text-muted); }
+
+        footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border); color: var(--text-muted); background: var(--surface); }
+        footer a { color: var(--primary); text-decoration: none; margin: 0 0.5rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="/" class="logo">ToolHub</a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="hero">
+            <h1>Invisible Character Generator</h1>
+            <p>1-click copy for blank text, empty spaces, and invisible letters.</p>
+        </div>
+
+        <div class="ad-slot">[ AdSense Top Ad ]</div>
+
+        <div class="tool-box">
+            <div class="btn-grid">
+                <!-- Method 1: Braille Pattern Blank (U+2800) -->
+                <div class="copy-card">
+                    <h3>Method 1: Braille Blank</h3>
+                    <p>Best for Instagram, WhatsApp, and generic texting.</p>
+                    <button class="copy-btn" onclick="copyText('⠀', this)">Copy Invisible Space</button>
+                </div>
+                
+                <!-- Method 2: Hangul Filler (U+3164) -->
+                <div class="copy-card">
+                    <h3>Method 2: Hangul Filler</h3>
+                    <p>Best for Video Games (Fortnite, PUBG) and Discord.</p>
+                    <button class="copy-btn" onclick="copyText('ㅤ', this)">Copy Invisible Character</button>
+                </div>
+            </div>
+
+            <div class="test-area">
+                <label>Test it out here (Paste to see the cursor move):</label>
+                <textarea placeholder="Paste your invisible character here..."></textarea>
+            </div>
+        </div>
+
+        <div class="ad-slot">[ AdSense Middle Ad ]</div>
+
+        <div class="content">
+            <h2>What is an Invisible Character?</h2>
+            <p>An invisible character (sometimes called an empty character or blank space) is a special Unicode symbol that represents a space without actually being a traditional "spacebar" character. Because standard spaces are automatically stripped or ignored by many apps, you need these special unicode characters to trick the system into displaying nothing.</p>
+
+            <h2>Where can you use an Empty Space?</h2>
+            <ul>
+                <li><strong>WhatsApp & iMessage:</strong> Send completely empty, blank messages to your friends to confuse them.</li>
+                <li><strong>Instagram Bios:</strong> Use invisible characters to force line breaks and center your text perfectly in your IG bio.</li>
+                <li><strong>Gaming (Fortnite, PUBG, Free Fire):</strong> Create an invisible username or a clan name with blank spaces that the game normally wouldn't allow.</li>
+                <li><strong>Discord:</strong> Set your nickname or server channel names to be completely blank.</li>
+            </ul>
+
+            <h2>Why not just use the Spacebar?</h2>
+            <p>Modern applications are designed to trim excess whitespace. If you type a regular space into a chat box and hit send, the app recognizes it as an empty input and won't let you send the message. By using a Unicode symbol like the Braille Pattern Blank (U+2800) or Hangul Filler (U+3164), the application thinks you are sending a real letter, even though it is completely invisible to the human eye.</p>
+        </div>
+
+        <div class="ad-slot">[ AdSense Bottom Ad ]</div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 ToolHub. All rights reserved.</p>
+        <p style="margin-top: 0.5rem;"><a href="/privacy-policy.html">Privacy</a> | <a href="/terms.html">Terms</a></p>
+    </footer>
+
+    <script>
+        function copyText(char, btn) {
+            navigator.clipboard.writeText(char).then(() => {
+                const originalText = btn.innerText;
+                btn.innerText = 'Copied to Clipboard!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
